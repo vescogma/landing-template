@@ -8,7 +8,7 @@ const indexHtml = path.resolve(__dirname, 'src', 'index.html');
 
 module.exports = {
   entry: {
-    'main': path.resolve(__dirname, 'src', 'index.js'),
+    main: path.resolve(__dirname, 'src', 'index.js'),
   },
 
   devtool: 'source-map',
@@ -35,6 +35,7 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
+            babelrc: false,
             presets: ['env', 'react'],
             plugins: [
               'transform-runtime',
@@ -51,19 +52,19 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        exclude: [indexHtml],
         use: ['html-loader'],
       },
       {
-        test: indexHtml,
-        use: [{
-          loader: 'html-loader',
-          options: { interpolate: true },
-        }],
-      },
-      {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(jpg|png|gif)$/,

@@ -1,1 +1,1 @@
-export const GET_IPS = 'app/global/get-ips';
+export const SEND_EMAIL = 'app/services/send_email';

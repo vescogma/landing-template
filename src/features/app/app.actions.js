@@ -1,7 +1,3 @@
-import { GET_IPS } from './app.constants';
-
-export function getNewList() {
-  return {
-    type: GET_IPS,
-  };
+export async function sendEmail() {
+  fetch('/email', { method: 'get' });
 }

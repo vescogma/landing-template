@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "env", {
+        "targets": {
+          "node": true
+        }
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-object-rest-spread",
+    [
+      "css-modules-transform", {
+        "generateScopedName": "[hash:base64]",
+        "extensions": [".css"]
+      }
+    ]
+  ]
+}

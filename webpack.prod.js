@@ -2,12 +2,11 @@ const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const MIN = process.env.MIN ? true : false;
 const ENV = JSON.stringify(process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'production');
-
-const indexHtml = path.resolve(__dirname, 'src', 'index.html');
 
 const productionPlugins = MIN ? [
   new UglifyJsPlugin({
@@ -33,7 +32,7 @@ const productionPlugins = MIN ? [
 
 module.exports = {
   entry: {
-    'main': path.resolve(__dirname, 'src', 'index.js'),
+    main: path.resolve(__dirname, 'src', 'index.js'),
   },
 
   devtool: 'source-map',
@@ -50,8 +49,12 @@ module.exports = {
       'process.env.NODE_ENV': `'${ENV}'`,
     }),
     new HTMLPlugin({
-      template: indexHtml,
+      template: path.resolve(__dirname, 'src', 'index.html'),
       chunksSortMode: 'dependency',
+    }),
+    new ExtractTextPlugin({
+      filename: 'styles.css',
+      allChunks: true,
     }),
     ...productionPlugins,
   ],
@@ -64,6 +67,7 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
+            babelrc: false,
             presets: [
               ['env', {
                 targets: {
@@ -92,13 +96,16 @@ module.exports = {
         use: ['html-loader'],
       },
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
         test: /\.css$/,
-        include: /node_modules\/@storefront/,
-        use: ['to-string-loader', 'css-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [{
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          }],
+        }),
       },
       {
         test: /\.(jpg|png|gif)$/,
