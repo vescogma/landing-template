@@ -5,6 +5,7 @@ import { sendEmail } from './app.actions';
 
 const AppComponent = () => (
   <div>
+    TEST OUT YOUR LANDING PAGE YEAAA
     <div className={css.text}>
       HELLO WORLD!
     </div>
