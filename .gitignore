@@ -10,7 +10,6 @@ node_modules
 .vscode/
 .idea/
 .DS_Store
-.gitignore
 .elasticbeanstalk/
 package-lock.json
 
