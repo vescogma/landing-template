@@ -10,7 +10,7 @@
     "app:build:prod": "cross-env NODE_ENV=production MIN=false webpack --env=prod --progress --profile --colors",
     "app:prod": "cross-env NODE_ENV=production MIN=true webpack --env=prod --progress --profile --colors",
     "app:aws": "webpack --env=prod --progress --profile --colors",
-    "aws": "npm run app:aws && npm run ssr:aws && npm run serve:aws",
+    "aws": "npm run serve:aws",
     "server": "cross-env NODE_ENV=development nodemon ./server --exec babel-node",
     "server:debug": "cross-env NODE_ENV=development nodemon --inspect ./server --exec babel-node",
     "ssr:server": "cross-env NODE_ENV=production babel ./server -d ./dist/server",
