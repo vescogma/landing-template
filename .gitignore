@@ -10,6 +10,7 @@ node_modules
 .idea/
 .DS_Store
 .gitignore
+dist/
 .elasticbeanstalk/
 package-lock.json
 
