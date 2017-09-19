@@ -50,6 +50,7 @@ module.exports = {
     }),
     new HTMLPlugin({
       template: path.resolve(__dirname, 'src', 'index.html'),
+      filename: 'index.html',
       chunksSortMode: 'dependency',
     }),
     new ExtractTextPlugin({

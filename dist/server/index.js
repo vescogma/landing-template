@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const Koa = require('koa');
 const Router = require('koa-router');
@@ -12,7 +14,7 @@ const router = new Router();
 const prod = process.env.NODE_ENV === 'production';
 
 router.get('/', reactMiddleware);
-router.get('/email', async (ctx) => {
+router.get('/email', async ctx => {
   try {
     await email.testEmail();
     ctx.status = 200;
