@@ -12,6 +12,7 @@ const app = new Koa();
 const router = new Router();
 
 const prod = process.env.NODE_ENV === 'production';
+const port = process.env.PORT || 3000;
 
 router.get('/', reactMiddleware);
 router.get('/email', async ctx => {
@@ -31,6 +32,6 @@ const staticPath = path.join(__dirname, '..', ...(prod ? [] : ['dist']));
 
 app.use(staticCache(staticPath));
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log('listening on port ' + port);
 });
