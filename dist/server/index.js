@@ -5,6 +5,8 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const staticCache = require('koa-static-cache');
 
+const port = process.env.PORT || 3000;
+
 const reactMiddleware = require('./middleware/react');
 const email = require('./services/email');
 
@@ -31,6 +33,6 @@ const staticPath = path.join(__dirname, '..', ...(prod ? [] : ['dist']));
 
 app.use(staticCache(staticPath));
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log('listening on port 8080');
 });
