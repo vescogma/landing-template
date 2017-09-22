@@ -1,16 +1,39 @@
-const path = require('path');
-const fs = require('fs');
-const reactDOMServer = require('react-dom/server');
-const AppComponent = require('../../src/features/app');
+import path from 'path';
+import fs from 'fs';
+
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
+import { Router } from '../../src/features/router';
+
+const indexPath = path.join(__dirname, '..', '..', 'index.html');
+const indexHTML = fs.readFileSync(indexPath).toString();
 
 const reactMiddleware = async ctx => {
-  const prod = process.env.NODE_ENV === 'production';
-  const indexPath = path.join(__dirname, '..', '..', ...(prod ? [] : ['src']), 'index.html');
-  const htmlString = fs.readFileSync(indexPath);
-  const root = reactDOMServer.renderToString(AppComponent.App());
-  const body = htmlString.toString().replace('<div id="root">', `<div id="root">${root}`);
-  ctx.body = body;
+  let context = {};
+
+  const content = renderToString(
+    <StaticRouter location={ctx.url} context={context}>
+      <Router />
+    </StaticRouter>
+  );
+  
+  const bodyWithContent = indexHTML.replace('<div id="root">', `<div id="root">${content}`);
+
+  if (context.url) {
+    ctx.status = 302;
+    ctx.redirect(context.url);
+  }
+
+  if (context.status === 404) {
+    ctx.status = 404;
+  } else {
+    ctx.status = 200;
+  }
+
+  ctx.body = bodyWithContent;
   ctx.type = 'html';
+
 };
 
 module.exports = reactMiddleware;

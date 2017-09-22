@@ -23,6 +23,7 @@ function testEmail() {
       if (error) {
         reject(error);
       } else {
+        console.log('email has been sent');
         resolve(body);
       }
     });

@@ -14,8 +14,8 @@ module.exports = {
   devtool: 'source-map',
 
   output: {
-    filename: '[name].[hash].js',
-    sourceMapFilename: '[name].[hash].map.js',
+    filename: '[name].js',
+    sourceMapFilename: '[name].map.js',
     path: path.resolve(__dirname, 'dist'),
   },
 
@@ -93,5 +93,6 @@ module.exports = {
     port: 3000,
     overlay: true,
     watchContentBase: true,
+    historyApiFallback: true,
   },
 };
