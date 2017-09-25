@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLPlugin = require('html-webpack-plugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'development';
 
@@ -25,6 +26,10 @@ module.exports = {
       'process.env.NODE_ENV': `'${ENV}'`,
     }),
     new HTMLPlugin({ template: indexHtml }),
+    new ExtractTextPlugin({
+      filename: 'styles.css',
+      allChunks: true,
+    }),
   ],
 
   module: {
@@ -36,7 +41,14 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             babelrc: false,
-            presets: ['env', 'react'],
+            presets: [
+              ['env', {
+                targets: {
+                  browsers: ['last 2 versions'],
+                },
+              }],
+              'react',
+            ],
             plugins: [
               'transform-runtime',
               'transform-object-rest-spread',
@@ -56,19 +68,27 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          {
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [{
             loader: 'css-loader',
             options: {
               modules: true,
             },
-          },
-        ],
+          }],
+        }),
       },
       {
         test: /\.(jpg|png|gif)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: '/assets/',
+              name: '[name].[ext]',
+            },
+          }
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/,

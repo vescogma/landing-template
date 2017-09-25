@@ -19,11 +19,11 @@ var _notFound = require('../not-found');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const RedirectWithStatus = ({ from, to, status }) => _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
+const SetStatus = ({ status, children }) => _react2.default.createElement(_reactRouterDom.Route, { render: ({ staticContext }) => {
     if (staticContext) {
-      staticContext.status = status;
+      staticContext.status = 404;
     }
-    return _react2.default.createElement(_reactRouterDom.Redirect, { from: from, to: to });
+    return children;
   } });
 
 const Router = exports.Router = () => _react2.default.createElement(
@@ -31,10 +31,9 @@ const Router = exports.Router = () => _react2.default.createElement(
   null,
   _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _app.App }),
   _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about.About }),
-  _react2.default.createElement(_reactRouterDom.Route, { path: '/404', component: _notFound.NotFound }),
-  _react2.default.createElement(RedirectWithStatus, {
-    status: 404,
-    from: '*',
-    to: '/404'
-  })
+  _react2.default.createElement(
+    SetStatus,
+    { status: 404 },
+    _react2.default.createElement(_notFound.NotFound, { status: 404 })
+  )
 );

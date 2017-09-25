@@ -39,14 +39,14 @@ const reactMiddleware = async ctx => {
     ctx.redirect(context.url);
   }
 
+  ctx.body = bodyWithContent;
+  ctx.type = 'html';
+
   if (context.status === 404) {
     ctx.status = 404;
   } else {
     ctx.status = 200;
   }
-
-  ctx.body = bodyWithContent;
-  ctx.type = 'html';
 };
 
 module.exports = reactMiddleware;

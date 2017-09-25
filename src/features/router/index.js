@@ -4,24 +4,21 @@ import { App } from '../app';
 import { About } from '../about';
 import { NotFound } from '../not-found';
 
-const RedirectWithStatus = ({ from, to, status }) => (
+const SetStatus = ({ status, children }) => (
   <Route render={({ staticContext }) => {
     if (staticContext) {
-      staticContext.status = status;
+      staticContext.status = 404;
     }
-    return <Redirect from={from} to={to}/>
-  }}/>
+    return children;
+  }} />
 );
 
 export const Router = () => (
   <Switch>
     <Route exact path="/" component={App} />
     <Route path="/about" component={About} />
-    <Route path="/404" component={NotFound} />
-    <RedirectWithStatus
-      status={404}
-      from="*"
-      to="/404"
-    />
+    <SetStatus status={404}>
+      <NotFound status={404} />
+    </SetStatus>
   </Switch>
 );

@@ -1,0 +1,41 @@
+{
+  "header": {
+    "background-image": "some-image.jpg",
+    "title": "Take care of babies while they're cute",
+    "sub-title": "Rent a baby service",
+    "styles": {}
+  },
+  "body": [
+    {
+      "type": "list",
+      "title": "some look at our babies",
+      "content": [
+        {
+          "type": "article",
+          "title": "title 1",
+          "description": "lorem opsum ioa sudbsia uwu d gwu dashsuhds ahofs husahuo sadih dwiohqi uhdwjsbcj shjks djoqiw opiejrih s",
+          "image": "some-image.jpg"
+        },
+        {
+          "type": "article",
+          "title": "title 2",
+          "description": "lorem opsum ioa sudbsia uwu d gwu dashsuhds ahofs husahuo sadih dwiohqi uhdwjsbcj shjks djoqiw opiejrih s",
+          "image": "some-image.jpg"
+        },
+        {
+          "type": "article",
+          "title": "title 3",
+          "description": "lorem opsum ioa sudbsia uwu d gwu dashsuhds ahofs husahuo sadih dwiohqi uhdwjsbcj shjks djoqiw opiejrih s",
+          "image": "some-image.jpg"
+        }
+      ]
+    },
+    {
+      "type": "side",
+      "title": "some side content",
+      "side": "right",
+      "description": "lorem opsum ioa sudbsia uwu d gwu dashsuhds ahofs husahuo sadih dwiohqi uhdwjsbcj shjks djoqiw opiejrih s",
+      "image": "some-image.jpg"
+    }
+  ]
+}

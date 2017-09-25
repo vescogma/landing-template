@@ -16,10 +16,11 @@ var css = {
 };
 
 
-const NotFoundComponent = () => _react2.default.createElement(
+const NotFoundComponent = ({ status }) => _react2.default.createElement(
   'div',
   null,
-  '404 page not found bitch'
+  status,
+  ' page not found bitch'
 );
 
 const NotFound = exports.NotFound = NotFoundComponent;

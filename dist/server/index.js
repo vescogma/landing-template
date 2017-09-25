@@ -11,12 +11,12 @@ const router = require('./routes');
 
 const app = new Koa();
 
-const prod = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 3000;
 
-const staticPath = path.join(__dirname, '..', ...(prod ? [] : ['dist']));
+const staticPath = path.resolve(__dirname, '..');
 
 app.use(staticCache(staticPath));
+// staticCache(path.resolve(__dirname, '..', 'assets'));
 
 app.use(router.routes());
 app.use(router.allowedMethods());

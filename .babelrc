@@ -14,8 +14,14 @@
     "transform-object-rest-spread",
     [
       "css-modules-transform", {
-        "generateScopedName": "[hash:base64]",
-        "extensions": [".css"]
+        "extensions": [".css"],
+        "generateScopedName": "[hash:base64]"
+      }
+    ],
+    [
+      "transform-assets-import-to-string", {
+        "baseDir": "/assets",
+        "baseUri": ""
       }
     ]
   ]

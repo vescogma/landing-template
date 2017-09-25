@@ -2,9 +2,9 @@ import React from 'react';
 
 import css from './not-found.styles.css';
 
-const NotFoundComponent = () => (
+const NotFoundComponent = ({ status }) => (
   <div>
-    404 page not found bitch
+    {status} page not found bitch
   </div>
 );
 

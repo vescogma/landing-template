@@ -74,8 +74,6 @@ module.exports = {
                 targets: {
                   browsers: ['last 2 versions'],
                 },
-                modules: false,
-                debug: false,
               }],
               'react',
             ],
@@ -110,7 +108,15 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|gif)$/,
-        use: 'file-loader',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: '/assets/',
+              name: '[name].[ext]',
+            },
+          }
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)$/,
