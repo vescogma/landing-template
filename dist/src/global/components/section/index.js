@@ -11,25 +11,28 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var css = {};
+var css = {
+  'wrapper': '_1LQTI2G9nJOYge1kRRuESo',
+  'image': '_185nQ-jbk_awNiQi6NBUCP'
+};
 
 
 const SectionComponent = ({ title, description, imageSrc, imageAlt }) => _react2.default.createElement(
-  'div',
-  { className: 'section' },
+  'section',
+  { className: css.wrapper },
   _react2.default.createElement(
     'div',
-    { className: 'title' },
+    { className: css.title },
     title
   ),
   _react2.default.createElement(
     'div',
-    { className: 'image' },
+    { className: css.image },
     _react2.default.createElement('img', { src: imageSrc, alt: imageAlt })
   ),
   _react2.default.createElement(
     'div',
-    { className: 'description' },
+    { className: css.description },
     description
   )
 );

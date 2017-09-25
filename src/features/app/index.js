@@ -3,6 +3,7 @@ import React from 'react';
 import css from './app.styles.css';
 import { sendEmail } from './app.actions';
 
+import { Grid } from '../../global/components/grid';
 import { Section } from '../../global/components/section';
 
 const AppComponent = () => (
@@ -19,6 +20,26 @@ const AppComponent = () => (
       imageSrc={require('../../global/assets/test.jpg')}
       imageAlt="test image"
     />
+    <Grid>
+      <Section
+        title="test grid 1"
+        description="hello this is a test image and i'd like to see it in all its glory ok? ok love meeee plx."
+        imageSrc={require('../../global/assets/test.jpg')}
+        imageAlt="test image 1"
+      />
+      <Section
+        title="test grid 2"
+        description="hello this is a test image and i'd like to see it in all its glory ok? ok love meeee plx."
+        imageSrc={require('../../global/assets/test.jpg')}
+        imageAlt="test image 2"
+      />
+      <Section
+        title="test grid 3"
+        description="hello this is a test image and i'd like to see it in all its glory ok? ok love meeee plx."
+        imageSrc={require('../../global/assets/test.jpg')}
+        imageAlt="test image 3"
+      />
+    </Grid>
   </div>
 );
 

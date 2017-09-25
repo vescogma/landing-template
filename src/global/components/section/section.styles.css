@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
+.image img {
+  max-height: 100%;
+  max-width: 100%;
+}

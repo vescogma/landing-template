@@ -11,6 +11,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _app = require('./app.actions');
 
+var _grid = require('../../global/components/grid');
+
 var _section = require('../../global/components/section');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -38,7 +40,29 @@ const AppComponent = () => _react2.default.createElement(
     description: 'hello this is a test image and i\'d like to see it in all its glory ok? ok love meeee plx.',
     imageSrc: '/assets/test.jpg',
     imageAlt: 'test image'
-  })
+  }),
+  _react2.default.createElement(
+    _grid.Grid,
+    null,
+    _react2.default.createElement(_section.Section, {
+      title: 'test grid 1',
+      description: 'hello this is a test image and i\'d like to see it in all its glory ok? ok love meeee plx.',
+      imageSrc: '/assets/test.jpg',
+      imageAlt: 'test image 1'
+    }),
+    _react2.default.createElement(_section.Section, {
+      title: 'test grid 2',
+      description: 'hello this is a test image and i\'d like to see it in all its glory ok? ok love meeee plx.',
+      imageSrc: '/assets/test.jpg',
+      imageAlt: 'test image 2'
+    }),
+    _react2.default.createElement(_section.Section, {
+      title: 'test grid 3',
+      description: 'hello this is a test image and i\'d like to see it in all its glory ok? ok love meeee plx.',
+      imageSrc: '/assets/test.jpg',
+      imageAlt: 'test image 3'
+    })
+  )
 );
 
 const App = exports.App = AppComponent;

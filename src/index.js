@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { getConfiguredStore } from './config/create-store';
 import { Router } from './features/router';
 
+import './global/styles/base.css';
+
 const history = createHistory();
 const store = getConfiguredStore(history);
 

@@ -2,15 +2,18 @@ import React from 'react';
 
 import css from './section.styles.css';
 
-
 const SectionComponent = ({ title, description, imageSrc, imageAlt }) => (
-  <div className="section">
-    <div className="title">{title}</div>
-    <div className="image">
+  <section className={css.wrapper}>
+    <div className={css.title}>
+      {title}
+    </div>
+    <div className={css.image}>
       <img src={imageSrc} alt={imageAlt} />
     </div>
-    <div className="description">{description}</div>
-  </div>
+    <div className={css.description}>
+      {description}
+    </div>
+  </section>
 );
 
 export const Section = SectionComponent;

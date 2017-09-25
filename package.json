@@ -14,7 +14,7 @@
     "aws:ssr": "babel ./server -d ./dist/server && babel ./src -d ./dist/src",
     "dev": "npm run app:build:dev && npm run ssr && npm run server",
     "dev:debug": "npm run app:build:dev && npm run ssr && npm run server:debug",
-    "dev:watch": "nodemon --watch server --watch src -x \"npm run dev\"",
+    "dev:watch": "nodemon -e js,css,html --watch server --watch src -x \"npm run dev\"",
     "dev:debug:watch": "nodemon --watch server --watch src -x \"npm run dev:debug\"",
     "server": "cross-env NODE_ENV=production node -r dotenv/config ./dist/server",
     "server:debug": "cross-env NODE_ENV=production node -r dotenv/config --inspect ./dist/server",
@@ -23,7 +23,7 @@
     "ssr:app": "cross-env NODE_ENV=production babel ./src -d ./dist/src",
     "ssr:server": "cross-env NODE_ENV=production babel ./server -d ./dist/server",
     "start": "npm run app:build:min && npm run ssr && npm run server",
-    "start:watch": "nodemon --watch server --watch src -x \"npm run start\"",
+    "start:watch": "nodemon -e js,css,html --watch server --watch src -x \"npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

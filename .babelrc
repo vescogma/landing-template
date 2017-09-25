@@ -1,13 +1,22 @@
 {
+  "passPerPreset": true,
   "presets": [
-    [
-      "env", {
-        "targets": {
-          "node": true
-        }
-      }
-    ],
-    "react"
+    {
+      "plugins": ["transform-runtime"]
+    },
+    {
+      "passPerPreset": false,
+      "presets": [
+        [
+          "env", {
+            "targets": {
+              "node": true
+            }
+          }
+        ],
+        "react"
+      ]
+    }
   ],
   "plugins": [
     "transform-runtime",

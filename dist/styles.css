@@ -3,6 +3,26 @@
   color: red;
   background-color: black;
   font-family: Helvetica, sans-serif;
+}.BSgCAbrF2ufmXNg73DpT8 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BSgCAbrF2ufmXNg73DpT8 section {
+  flex: 1 1 auto;
+}._1LQTI2G9nJOYge1kRRuESo {
+  width: 100%;
+}
+
+._185nQ-jbk_awNiQi6NBUCP {
+  width: 100%;
+}
+
+._185nQ-jbk_awNiQi6NBUCP img {
+  max-height: 100%;
+  max-width: 100%;
 }._12Jh28NtdznyO7io4YrMnq {
   font-size: 32px;
   color: red;
@@ -14,4 +34,33 @@
   background-color: black;
   font-family: Helvetica, sans-serif;
 }
+* {
+  box-sizing: border-box;
+}
+
+ul, li, input, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  font-size: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+li {
+  display: block;
+}
+
 /*# sourceMappingURL=main.map.js*/
