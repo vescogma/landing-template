@@ -74,11 +74,17 @@ module.exports = {
                 targets: {
                   browsers: ['last 2 versions'],
                 },
+                modules: false,
               }],
               'react',
             ],
             plugins: [
-              'transform-runtime',
+              [
+                'transform-runtime', {
+                  "polyfill": false,
+                  "regenerator": true,
+                },
+              ],
               'transform-object-rest-spread',
             ],
           },

@@ -31,6 +31,7 @@ const Router = exports.Router = () => _react2.default.createElement(
   null,
   _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _app.App }),
   _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about.About }),
+  _react2.default.createElement(_reactRouterDom.Route, { path: '/500', render: () => _react2.default.createElement(_notFound.NotFound, { status: 500 }) }),
   _react2.default.createElement(
     SetStatus,
     { status: 404 },

@@ -19,12 +19,4 @@ router.get('/email', async ctx => {
 
 router.get('*', reactMiddleware);
 
-// might never hit
-router.get('*', async ctx => {
-  const indexPath = path.join(__dirname, '..', '..', 'index.html');
-  const htmlString = fs.readFileSync(indexPath);
-  ctx.body = htmlString.toString();
-  ctx.status = 200;
-});
-
 module.exports = router;

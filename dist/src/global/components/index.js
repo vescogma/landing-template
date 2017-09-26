@@ -37,3 +37,15 @@ var _section = require('./section');
     }
   });
 });
+
+var _header = require('./header');
+
+(0, _keys2.default)(_header).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  (0, _defineProperty2.default)(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _header[key];
+    }
+  });
+});

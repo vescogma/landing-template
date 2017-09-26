@@ -46,11 +46,17 @@ module.exports = {
                 targets: {
                   browsers: ['last 2 versions'],
                 },
+                modules: false,
               }],
               'react',
             ],
             plugins: [
-              'transform-runtime',
+              [
+                'transform-runtime', {
+                  "polyfill": false,
+                  "regenerator": true,
+                },
+              ],
               'transform-object-rest-spread',
             ],
           },
@@ -84,7 +90,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: '/assets/',
+              publicPath: '/',
+              outputPath: 'assets/',
               name: '[name].[ext]',
             },
           }
@@ -114,5 +121,6 @@ module.exports = {
     overlay: true,
     watchContentBase: true,
     historyApiFallback: true,
+    // contentBase: '/',
   },
 };

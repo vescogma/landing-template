@@ -3,8 +3,7 @@ import React from 'react';
 import css from './app.styles.css';
 import { sendEmail } from './app.actions';
 
-import { Grid } from '../../global/components/grid';
-import { Section } from '../../global/components/section';
+import { Grid, Section, Header } from '../../global/components';
 
 const AppComponent = () => (
   <div>
@@ -14,11 +13,11 @@ const AppComponent = () => (
     <button onClick={sendEmail}>
       TEST EMAIL
     </button>
-    <Section
-      title="my test section"
-      description="hello this is a test image and i'd like to see it in all its glory ok? ok love meeee plx."
+    <Header
+      title="my big title"
+      subtitle="my small tiny title"
       imageSrc={require('../../global/assets/test.jpg')}
-      imageAlt="test image"
+      imageAlt="big image"
     />
     <Grid>
       <Section
