@@ -3,17 +3,20 @@ import React from 'react';
 import css from './section.styles.css';
 
 const SectionComponent = ({ title, description, imageSrc, imageAlt }) => (
-  <section className={css.wrapper}>
-    <div className={css.title}>
-      {title}
+  <div
+    className={css.wrapper}
+    title={imageAlt}
+    style={{ backgroundImage: `url(${imageSrc})` }}
+  >
+    <div className={css.content}>
+      <div className={css.title}>
+        {title}
+      </div>
+      <div className={css.description}>
+        {description}
+      </div>
     </div>
-    <div className={css.image}>
-      <img src={imageSrc} alt={imageAlt} />
-    </div>
-    <div className={css.description}>
-      {description}
-    </div>
-  </section>
+  </div>
 );
 
 export const Section = SectionComponent;

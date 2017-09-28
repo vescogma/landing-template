@@ -15,24 +15,9 @@ var _components = require('../../global/components');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var css = {
-  'text': '_202KjRSdw67KOSv7WFoT-1'
-};
-
-
 const AppComponent = () => _react2.default.createElement(
   'div',
   null,
-  _react2.default.createElement(
-    'div',
-    { className: css.text },
-    'Test all the landing pages'
-  ),
-  _react2.default.createElement(
-    'button',
-    { onClick: _app.sendEmail },
-    'TEST EMAIL'
-  ),
   _react2.default.createElement(_components.Header, {
     title: 'my big title',
     subtitle: 'my small tiny title',
@@ -60,6 +45,11 @@ const AppComponent = () => _react2.default.createElement(
       imageSrc: '/assets/test.jpg',
       imageAlt: 'test image 3'
     })
+  ),
+  _react2.default.createElement(
+    'button',
+    { onClick: _app.sendEmail },
+    'TEST EMAIL'
   )
 );
 

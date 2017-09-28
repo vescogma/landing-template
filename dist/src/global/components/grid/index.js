@@ -17,7 +17,7 @@ var css = {
 
 
 const GridComponent = ({ children }) => _react2.default.createElement(
-  'section',
+  'div',
   { className: css.wrapper },
   children
 );

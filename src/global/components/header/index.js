@@ -3,17 +3,19 @@ import React from 'react';
 import css from './header.styles.css';
 
 const HeaderComponent = ({ title, subtitle, imageSrc, imageAlt }) => (
-  <section className={css.wrapper}>
-    <div className={css.image}>
-      <img src={imageSrc} alt={imageAlt} />
+  <div
+    className={css.base}
+    style={{ backgroundImage: `url(${imageSrc})` }}
+  >
+    <div className={css.wrapper}>
+      <div className={css.title}>
+        {title}
+      </div>
+      <div className={css.subtitle}>
+        {subtitle}
+      </div>
     </div>
-    <div className={css.title}>
-      {title}
-    </div>
-    <div className={css.subtitle}>
-      {subtitle}
-    </div>
-  </section>
+  </div>
 );
 
 export const Header = HeaderComponent;

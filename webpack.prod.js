@@ -104,12 +104,28 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
-            loader: 'css-loader',
-            options: {
-              modules: true,
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[name]__[local]--[hash:base64:10]',
+              },
             },
-          }],
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: (loader) => [
+                  require('postcss-import')({
+                    root: loader.resourcePath,
+                  }),
+                  require('postcss-cssnext')({
+                    browsers: 'last 2 versions',
+                  }),
+                ],
+              },
+            },
+          ],
         }),
       },
       {

@@ -11,26 +11,33 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var css = {};
+var css = {
+  'base': '_2VRJ3zkHrQQLtBaIwVsRVG',
+  'wrapper': '_1zqbq-ngdJ-2688-xsASfh',
+  'title': '_10FZmZrAunaiMism3b5dFz',
+  'subtitle': '_3F8zMrBZdbsf3kRm--R5Wp'
+};
 
 
 const HeaderComponent = ({ title, subtitle, imageSrc, imageAlt }) => _react2.default.createElement(
   'section',
-  { className: css.wrapper },
+  {
+    className: css.base,
+    style: { backgroundImage: `url(${imageSrc})` }
+  },
   _react2.default.createElement(
     'div',
-    { className: css.image },
-    _react2.default.createElement('img', { src: imageSrc, alt: imageAlt })
-  ),
-  _react2.default.createElement(
-    'div',
-    { className: css.title },
-    title
-  ),
-  _react2.default.createElement(
-    'div',
-    { className: css.subtitle },
-    subtitle
+    { className: css.wrapper },
+    _react2.default.createElement(
+      'div',
+      { className: css.title },
+      title
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: css.subtitle },
+      subtitle
+    )
   )
 );
 

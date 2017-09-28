@@ -13,7 +13,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var css = {
   'wrapper': '_1LQTI2G9nJOYge1kRRuESo',
-  'image': '_185nQ-jbk_awNiQi6NBUCP'
+  'image': '_185nQ-jbk_awNiQi6NBUCP',
+  'content': 'tkDwbsyklFXqO8uR6hAO5',
+  'title': '_1CkjF2deUxPToiJJE7ilPt',
+  'description': '_1Ag59yyXQNtONz0peQCJb'
 };
 
 
@@ -22,18 +25,22 @@ const SectionComponent = ({ title, description, imageSrc, imageAlt }) => _react2
   { className: css.wrapper },
   _react2.default.createElement(
     'div',
-    { className: css.title },
-    title
-  ),
-  _react2.default.createElement(
-    'div',
     { className: css.image },
     _react2.default.createElement('img', { src: imageSrc, alt: imageAlt })
   ),
   _react2.default.createElement(
     'div',
-    { className: css.description },
-    description
+    { className: css.content },
+    _react2.default.createElement(
+      'div',
+      { className: css.title },
+      title
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: css.description },
+      description
+    )
   )
 );
 

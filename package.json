@@ -33,9 +33,9 @@
   },
   "homepage": "https://github.com/vescogma/front-end-test-05#readme",
   "dependencies": {
+    "autoprefixer": "^7.1.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
-    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-transform-assets-import-to-string": "^1.0.1",
@@ -55,6 +55,8 @@
     "koa-socket": "^4.4.0",
     "koa-static-cache": "^5.1.1",
     "mailgun-js": "^0.13.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
@@ -68,6 +70,7 @@
     "webpack": "^3.3.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "cross-env": "^5.0.1",
     "dotenv": "^4.0.0",
     "eslint": "^4.2.0",
@@ -75,6 +78,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.1.0",
     "nodemon": "^1.11.0",
+    "postcss-loader": "^2.0.6",
     "webpack-dev-server": "^2.5.1"
   }
 }

@@ -1,22 +1,31 @@
 @import '../../styles/vars';
 
 .wrapper {
-  align-items: center;
-  background-position: center;
-  background-size: cover;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  min-height: 16rem;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
 
   @media (--medium) {
     flex-direction: column;
   }
 
-  & .content {
+  & > img {
     width: 100%;
     height: 100%;
+    max-width: 8rem;
+    min-width: 4rem;
+    flex: 1 1 4rem;
+  }
+
+  & .content {
+    flex: 1 1 8rem;
+    min-width: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     & .title {
       font-size: 1.5rem;

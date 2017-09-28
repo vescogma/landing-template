@@ -1,10 +1,23 @@
+@import '../../styles/vars';
+
 .wrapper {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
-}
+  flex-direction: column;
+  width: 100%;
+  
+  @media (--medium) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
-.wrapper section {
-  flex: 1 1 auto;
+  & > div {
+    flex: 0 0 auto;
+    
+    @media (--medium) {
+      flex: 1 1 16rem;
+      min-width: 16rem;
+    }
+  }
 }
